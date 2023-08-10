@@ -1,4 +1,7 @@
 # night_b
+### introduction about Namespace
+<img src="img/10aug.jpg">
+
 ### namespaces
 ```
 akash@sky:~$ kubectl get namespaces 
