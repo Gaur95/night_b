@@ -80,4 +80,46 @@ CURRENT   NAME                                                CLUSTER           
 akash@sky:~$ kubectl config set-context --current --namespace myspace
 Context "minikube" modified.
 ```
-
+# 16aug raplication controller
+```
+akash@sky:~/night/k8s$ kubectl apply -f rc.yml 
+replicationcontroller/ak-rc created
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS              RESTARTS   AGE
+ak-rc-r94jf   0/1     ContainerCreating   0          5s
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS              RESTARTS   AGE
+ak-rc-r94jf   0/1     ContainerCreating   0          11s
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS              RESTARTS   AGE
+ak-rc-r94jf   0/1     ContainerCreating   0          12s
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS    RESTARTS   AGE
+ak-rc-r94jf   1/1     Running   0          13s
+akash@sky:~/night/k8s$ kubectl delete po ak-rc-r94jf 
+pod "ak-rc-r94jf" deleted
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS              RESTARTS   AGE
+ak-rc-qf8m2   0/1     ContainerCreating   0          4s
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS    RESTARTS   AGE
+ak-rc-qf8m2   1/1     Running   0          6s
+akash@sky:~/night/k8s$ kubectl apply -f rc.yml 
+replicationcontroller/ak-rc configured
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS              RESTARTS   AGE
+ak-rc-ncqkv   0/1     ContainerCreating   0          3s
+ak-rc-qf8m2   1/1     Running             0          37s
+ak-rc-qwtdl   0/1     ContainerCreating   0          3s
+ak-rc-szjd6   0/1     ContainerCreating   0          3s
+ak-rc-vv88t   0/1     ContainerCreating   0          3s
+akash@sky:~/night/k8s$ kubectl get po --show-labels
+NAME          READY   STATUS    RESTARTS   AGE   LABELS
+ak-rc-ncqkv   1/1     Running   0          23s   web=xyz
+ak-rc-qf8m2   1/1     Running   0          57s   web=xyz
+ak-rc-qwtdl   1/1     Running   0          23s   web=xyz
+ak-rc-szjd6   1/1     Running   0          23s   web=xyz
+ak-rc-vv88t   1/1     Running   0          23s   web=xyz
+```
+### rc
+<img src="img/16aug.jpg">
