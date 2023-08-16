@@ -120,6 +120,21 @@ ak-rc-qf8m2   1/1     Running   0          57s   web=xyz
 ak-rc-qwtdl   1/1     Running   0          23s   web=xyz
 ak-rc-szjd6   1/1     Running   0          23s   web=xyz
 ak-rc-vv88t   1/1     Running   0          23s   web=xyz
+akash@sky:~/night/k8s$ kubectl get rc
+NAME    DESIRED   CURRENT   READY   AGE
+ak-rc   5         5         1       8s
+akash@sky:~/night/k8s$ kubectl get po
+NAME          READY   STATUS    RESTARTS   AGE
+ak-rc-2r8g4   1/1     Running   0          24s
+ak-rc-72hmj   1/1     Running   0          24s
+ak-rc-hxxz4   1/1     Running   0          24s
+ak-rc-rpmws   1/1     Running   0          24s
+ak-rc-t52jp   1/1     Running   0          24s
+akash@sky:~/night/k8s$ kubectl delete rc ak-rc
+replicationcontroller "ak-rc" deleted
+akash@sky:~/night/k8s$ kubectl get pod
+No resources found in default namespace.
+akash@sky:~/night/k8s$ 
 ```
 ### rc
 <img src="img/16aug.jpg">
