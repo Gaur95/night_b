@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+   color: red
+  name: mydep1
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+     color: red
+  template:
+    metadata:
+      labels:
+       color: red
+    spec:
+      containers:
+      - image: httpd
+        name: akc
+        ports:
+        - containerPort: 80
