@@ -5,7 +5,7 @@ metadata:
    color: red
   name: mydep1
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
      color: red
@@ -15,7 +15,7 @@ spec:
        color: red
     spec:
       containers:
-      - image: httpd
+      - image: nginx
         name: akc
         ports:
         - containerPort: 80

@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJkb2NrZXIuaW8iOnsidXNlcm5hbWUiOiJhYWthc2hnYXVyNTciLCJwYXNzd29yZCI6Inh5ekAxMjMiLCJhdXRoIjoiWVdGcllYTm9aMkYxY2pVM09uaDVla0F4TWpNPSJ9fX0=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: safe
+type: kubernetes.io/dockerconfigjson

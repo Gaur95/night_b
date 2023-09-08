@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privatepod
+  labels:
+    name: myapp
+spec:
+  imagePullSecrets:
+  - name: safe
+  containers:
+  - name: myapp
+    image: aakashgaur57/myapache_code
+    ports:
+      - containerPort: 80
