@@ -2,9 +2,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: myapp
+  labels:
+    name: red
 spec:
   containers:
   - name: akcon
-    image: httpd
+    image: nginx
     ports:
       - containerPort: 80

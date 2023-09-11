@@ -6,7 +6,7 @@ metadata:
     name: myapp
 spec:
   imagePullSecrets:
-  - name: safe
+  - name: akcred
   containers:
   - name: myapp
     image: aakashgaur57/myapache_code
