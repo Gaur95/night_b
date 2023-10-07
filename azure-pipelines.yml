@@ -17,7 +17,7 @@ steps:
 - task: Docker@2
   inputs:
     command: 'build'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'Dockerfile'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
